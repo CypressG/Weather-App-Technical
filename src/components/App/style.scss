@@ -1,0 +1,14 @@
+$background: rgb(32, 33, 36);
+$yellow: rgba(255, 167, 63, 1);
+$grey: rgba(136, 130, 124);
+* {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: $background;
+
+  #container {
+    width: 95%;
+    margin: auto;
+  }
+}

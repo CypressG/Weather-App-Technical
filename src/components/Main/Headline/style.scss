@@ -1,0 +1,21 @@
+$first: rgba(255, 167, 63, 1);
+$second: rgba(133, 124, 124, 0.4);
+$logo-gradient: $first, $second;
+
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headline {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+  h1 {
+    @include gradient(left, $logo-gradient);
+  }
+}

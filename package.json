@@ -2,10 +2,9 @@
   "name": "ibm-weather-app",
   "version": "0.0.1",
   "description": "An React and NodeJS Weather app.",
-  "source": "src/App.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "parcel src/components/App/index.html",
     "build": "parcel build",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\""
@@ -15,6 +14,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.4",
     "@babel/preset-react": "^7.16.7",
+    "@parcel/transformer-sass": "^2.3.1",
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
@@ -28,7 +28,10 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.3"
   }
 }

@@ -1,0 +1,27 @@
+$first: rgba(255, 167, 63, 0.45);
+$second: rgba(255, 255, 255, 0.7);
+$logo-gradient: $first, $second;
+
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#default-logo-style {
+  flex-basis: 100%;
+  text-align: center;
+  h1 {
+    @include gradient(left, $logo-gradient);
+  }
+  @media (min-width: 600px) {
+    display: inherit;
+    flex-basis: 10%;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}

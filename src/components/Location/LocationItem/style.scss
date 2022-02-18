@@ -1,0 +1,33 @@
+$first: rgba(203, 113, 6, 0.9);
+$second: rgba(255, 255, 255, 0.4);
+
+$logo-gradient: $first, $second;
+
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+
+.grid-item {
+  @include gradient(left, $logo-gradient);
+  height: 330px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  color: white;
+  .center {
+    text-align: center;
+  }
+  .top-text {
+    flex-basis: 20%;
+  }
+  .bottom-text {
+    flex-basis: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
