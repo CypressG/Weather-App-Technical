@@ -5,7 +5,7 @@ import LocationList from "../Location/LocationList/index";
 const Results = () => (
   <div>
     <Headline size="50px" text="Results" />
-    <div id="main-container">
+    <div className="main-container">
       <LocationList />
     </div>
   </div>
