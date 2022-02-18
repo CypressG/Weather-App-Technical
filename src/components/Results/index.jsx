@@ -1,8 +1,8 @@
 import "./style.scss";
-import Headline from "./Headline/index";
+import Headline from "../Headline/index";
 import LocationList from "../Location/LocationList/index";
 
-const Main = () => (
+const Results = () => (
   <div>
     <Headline size="50px" text="Results" />
     <div id="main-container">
@@ -10,4 +10,4 @@ const Main = () => (
     </div>
   </div>
 );
-export default Main;
+export default Results;

@@ -1,6 +1,6 @@
 $first: rgba(203, 113, 6, 0.9);
 $second: rgba(255, 255, 255, 0.4);
-
+$mustard: rgba(255, 167, 63, 1);
 $logo-gradient: $first, $second;
 
 @mixin gradient($direction, $list) {
@@ -15,19 +15,31 @@ $logo-gradient: $first, $second;
   height: 330px;
   padding: 20px;
   border-radius: 20px;
-  display: flex;
-  flex-flow: column;
+  position: relative;
   color: white;
-  .center {
+
+  .top-text {
     text-align: center;
   }
-  .top-text {
-    flex-basis: 20%;
+  .middle-text {
+    position: absolute;
+    overflow: hidden;
+    position: absolute;
+    top: 50%; /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
   }
-  .bottom-text {
-    flex-basis: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .bottom-button {
+    position: absolute;
+    bottom: -2%;
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translateX(-50%);
+    width: 80%;
+    height: 40px;
+    border-radius: 50px 50px 10px 10px;
+    border: none;
+    background-color: $mustard;
+    color: white;
+    font-size: 1.2rem;
   }
 }
