@@ -1,0 +1,22 @@
+$background: rgba(255, 167, 63, 1);
+.card {
+  display: flex;
+  flex-flow: column;
+  background-color: $background;
+  height: 300px;
+  flex-basis: 15%;
+  border-radius: 10px;
+  padding: 10px;
+
+
+  .item-1 {
+    color: white;
+    font-size: 2rem;
+    flex-basis: 50%;
+  }
+  .item-2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+  }
+}

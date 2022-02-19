@@ -1,13 +1,29 @@
 import "./style.scss";
-import Headline from "../Headline/index";
-import LocationList from "../Location/LocationList/index";
+import { useState } from "react";
+import Headline from "../Headline";
+import LocationList from "../Location/LocationList";
 
-const Results = () => (
-  <div>
-    <Headline size="50px" text="Results" />
-    <div className="main-container">
-      <LocationList />
+const Results = () => {
+  const checkLocal = () => {
+    window.addEventListener("storage", (event) => {
+      
+      // event contains
+      // key – the key that was changed
+      // oldValue – the old value
+      // newValue – the new value
+      // url –
+      // storageArea – either localStorage or sessionStorage object where the update happened.
+    });
+  };
+  const test = " tes";
+  const [results, setResults] = useState([]);
+  return (
+    <div>
+      <Headline size="50px" text="Results" />
+      <div className="main-container">
+        <LocationList />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 export default Results;

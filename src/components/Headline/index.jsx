@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Headline = (props) => {
-  const { text, size } = props;
+  const { text, size, align } = props;
   const Text = styled.h1`
     font-size: ${size};
+    text-align: ${align};
   `;
   return (
     <div className="headline">
@@ -17,9 +18,11 @@ const Headline = (props) => {
 Headline.propTypes = {
   text: PropTypes.string,
   size: PropTypes.string,
+  align: PropTypes.string,
 };
 Headline.defaultProps = {
   text: "Results",
   size: "4rem",
+  align: "center",
 };
 export default Headline;

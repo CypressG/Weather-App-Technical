@@ -12,9 +12,8 @@ $logo-gradient: $first, $second;
 }
 
 .headline {
-  width: 20%;
-  margin: auto;
-  text-align: center;
+  width: 100%;
+
   h1 {
     @include gradient(left, $logo-gradient);
   }

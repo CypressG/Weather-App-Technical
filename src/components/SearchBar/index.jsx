@@ -17,7 +17,9 @@ const SearchBar = (props) => {
 SearchBar.propTypes = {
   idName: PropTypes.string,
 };
+
 SearchBar.defaultProps = {
   idName: "default-searchbar-style",
 };
+
 export default SearchBar;

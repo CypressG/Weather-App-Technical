@@ -2,8 +2,7 @@ import "./style.scss";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const LocationItem = (props) => {
-  const { topSize, bottomSize, topText, bottomText } = props;
+const LocationItem = ({ topSize, bottomSize, topText, bottomText }) => {
   const Top = styled.h1`
     font-size: ${topSize};
     font-weight: 300;
