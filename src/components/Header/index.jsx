@@ -6,6 +6,7 @@ import stringLengthValidator from "../../validators/stringLengthValidator";
 import "./style.scss";
 import LocationItem from "../Location/LocationItem";
 import Headline from "../Headline";
+import { useState } from "react";
 
 const MIN_LENGHT = 3;
 const MAX_LENGHT = 30;
@@ -13,13 +14,13 @@ const MAX_LENGHT = 30;
 const Header = () => {
   const [query, setQuery] = useLocalStorage("query", "");
   const [data, setData] = useLocalStorage("data", []);
-
+  const [validity, setValidity] = useState(true);
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (stringLengthValidator(query, MIN_LENGHT, MAX_LENGHT)) {
       // FETCH
-
+      setValidity(true);
       const options = {
         method: "GET",
         url: `https://foreca-weather.p.rapidapi.com/location/search/${query}`,
@@ -41,6 +42,8 @@ const Header = () => {
           console.error(error);
         });
       //
+    } else {
+      setValidity(false);
     }
   };
 
@@ -54,6 +57,9 @@ const Header = () => {
             handleSubmit={handleSubmit}
             query={query}
           />
+          {!validity && (
+            <h1>There should be at least 3 letters and no more than 30</h1>
+          )}
         </div>
       </div>
       <div>
