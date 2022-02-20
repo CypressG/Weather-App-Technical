@@ -1,13 +1,16 @@
 import "./style.scss";
 import PropTypes from "prop-types";
 
-const Now = (props) => {
-  const { condition, temperature, feelsLike, feelsLikeTemp } = props;
-
+const Now = (locationWeatherData) => {
+  const {
+    locationWeatherData: {
+      locationWeatherData: { cloudiness, temperature, feelsLikeTemp },
+    },
+  } = locationWeatherData;
   return (
     <div className="now">
       <div className="top">
-        <h1>{condition}</h1>
+        <h1>{cloudiness}</h1>
       </div>
       <div className="middle">
         <h1>{temperature}</h1>
@@ -16,7 +19,7 @@ const Now = (props) => {
       </div>
       <div className="bottom">
         <div className="left-side">
-          <div className="left-top">{feelsLike}</div>
+          <div className="left-top">Feels Like: </div>
           <div className="left-bottom">{feelsLikeTemp}</div>
         </div>
         <div className="right-side" />
@@ -26,15 +29,11 @@ const Now = (props) => {
 };
 
 Now.propTypes = {
-  condition: PropTypes.string,
-  temperature: PropTypes.number,
-  feelsLike: PropTypes.string,
-  feelsLikeTemp: PropTypes.number,
+  locationWeatherData: PropTypes.shape({
+    cloudiness: PropTypes.string,
+    temperature: PropTypes.number,
+    feelsLikeTemp: PropTypes.number,
+  }).isRequired,
 };
-Now.defaultProps = {
-  condition: "N/a",
-  temperature: 0,
-  feelsLike: "Feels like",
-  feelsLikeTemp: 0,
-};
+
 export default Now;

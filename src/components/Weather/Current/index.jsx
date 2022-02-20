@@ -2,11 +2,11 @@ import "./style.scss";
 import Now from "./Now";
 import ConditionsList from "./Conditions/ConditionsList";
 
-const Current = () => (
-  // const test = "Current";
+const Current = (locationWeatherData) => (
   <div className="current">
-    <Now temperature={33} feelsLikeTemp={33} condition="cloudy" />
-    <ConditionsList />
+    <Now locationWeatherData={locationWeatherData} />
+    <ConditionsList locationWeatherData={locationWeatherData} />
   </div>
 );
+
 export default Current;

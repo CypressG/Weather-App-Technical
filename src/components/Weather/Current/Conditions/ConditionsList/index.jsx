@@ -1,13 +1,28 @@
 import ConditionsItem from "../ConditionsItem";
 import "./style.scss";
+import getSpecificEntries from "../../../../../utils/scripts/objectManipulation.mjs";
 
-const ConditionsList = () => (
-  <div className="conditions-list">
-    <ConditionsItem name="Wind Speed" measurement="m/s" value="10" />
-    <ConditionsItem name="Wind Speed" measurement="m/s" value="10" />
-    <ConditionsItem name="Wind Speed" measurement="m/s" value="10" />
-    <ConditionsItem name="Wind Speed" measurement="m/s" value="10" />
-    <ConditionsItem name="Wind Speed" measurement="m/s" value="10" />
-  </div>
-);
+const desiredValues = [
+  ["relHumidity", "Real Humidity", ""],
+  ["windSpeed", "Wind Speed", "m/s"],
+  ["windDir", "Wind Direction", "m/s"],
+  ["uvIndex", "UV index", ""],
+];
+
+const ConditionsList = (locationWeatherData) => {
+  let { locationWeatherData: data } = locationWeatherData;
+  data = getSpecificEntries(data.locationWeatherData, desiredValues);
+  return (
+    <div className="conditions-list">
+      {data.map((item) => (
+        <ConditionsItem
+          key={item.id}
+          name={item.name}
+          value={item.value}
+          units={item.units}
+        />
+      ))}
+    </div>
+  );
+};
 export default ConditionsList;
