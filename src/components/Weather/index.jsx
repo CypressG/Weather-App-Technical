@@ -52,7 +52,7 @@ const Weather = () => {
   const getDailyWeatherData = () => {
     const options = {
       method: "GET",
-      url: `https://${process.env.SERVER_ADDRESS}/weather/daily/${locationId}`,
+      url: `https://kipras.me/weather/daily/${locationId}`,
     };
 
     axios
