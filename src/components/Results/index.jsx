@@ -27,7 +27,7 @@ const Results = () => {
 
       const options = {
         method: "GET",
-        url: `https://${process.env.SERVER_ADDRESS}/location/search/${query}`,
+        url: `https://kipras.me/location/search/${query}`,
         params: { lang: "en" },
         headers: {},
       };
