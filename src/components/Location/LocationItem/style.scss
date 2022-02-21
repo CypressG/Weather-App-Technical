@@ -16,6 +16,7 @@ $button-hover: hsl(35, 45%, 50%);
   grid-template-rows: 1fr 1fr;
   gap: 40px;
   padding: 40px;
+  max-width: 100%;
   @media (min-width: 576px) {
   }
 
@@ -37,6 +38,7 @@ $button-hover: hsl(35, 45%, 50%);
     animation-name: fade-in;
     animation-fill-mode: both;
     animation-duration: 2s;
+    max-width: 100%;
   }
 
   $animationDelay: 1;
