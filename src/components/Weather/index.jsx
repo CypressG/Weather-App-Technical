@@ -6,7 +6,6 @@ import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 import Current from "./Current";
 import Headline from "../Headline";
-import "dotenv/config";
 import "./style.scss";
 import Daily from "./Daily";
 import Logo from "../Logo";
