@@ -22,25 +22,39 @@ $logo-gradient: $first, $second;
       border-radius: 30px;
       border: none;
       @include gradient(left, $logo-gradient);
-      padding-left: 10%;
-      font-size: 2rem;
+      padding-left: 15%;
+      font-size: 1rem;
       color: white;
     }
     #search-icon {
       position: absolute;
-      left: 5%;
+      left: 10%;
       top: 50%;
       transform: translate(-50%, -50%);
     }
   }
-  @media (min-width: 600px) {
+  @media (min-width: 576px) {
     flex-basis: 80%;
     form {
       display: flex;
       justify-content: center;
+
       input {
+        padding-left: 10%;
+
+        font-size: 2rem;
         @include gradient(left, $logo-gradient);
       }
+      #search-icon {
+        left: 5%;
+      }
     }
+  }
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 992px) {
+  }
+  @media (min-width: 1200px) {
+    justify-content: flex-start;
   }
 }

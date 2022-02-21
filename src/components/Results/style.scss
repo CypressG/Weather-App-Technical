@@ -2,11 +2,13 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-bottom: 20px;
 
   @media (min-width: 576px) {
     flex-flow: row nowrap;
   }
   @media (min-width: 768px) {
+    margin: auto;
   }
   @media (min-width: 992px) {
   }
