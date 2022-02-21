@@ -63,7 +63,7 @@ const Results = () => {
       <div className="main-container">
         <Headline text="Results" />
         <div className="grid-container main-container">
-          {data.length &&
+          {data.length > 0 &&
             data.map((location) => <LocationItem location={location} />)}
           {!data.length && <h1>No results</h1>}
         </div>
