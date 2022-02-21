@@ -28,6 +28,7 @@ $background: rgba(136, 130, 124, 1);
     flex-basis: 30%;
 
     .left-side {
+      padding: 10px;
       flex-basis: 50%;
       display: flex;
       flex-flow: column;
@@ -36,6 +37,7 @@ $background: rgba(136, 130, 124, 1);
       }
       .left-bottom {
         flex-basis: 50%;
+        font-size: 2rem;
       }
     }
     .right-side {

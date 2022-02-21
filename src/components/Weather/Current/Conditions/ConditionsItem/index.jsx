@@ -7,7 +7,8 @@ const ConditionsItem = (props) => {
     <div className="card">
       <div className="item-1">{name}</div>
       <div className="item-2">
-        {value} {units}
+        <div>{value}</div>
+        <div> {units}</div>
       </div>
     </div>
   );

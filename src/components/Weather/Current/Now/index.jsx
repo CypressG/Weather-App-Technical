@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 const Now = (locationWeatherData) => {
   const {
     locationWeatherData: {
-      locationWeatherData: { cloudiness, temperature, feelsLikeTemp },
+      locationWeatherData: { symbolPhrase, temperature, feelsLikeTemp },
     },
   } = locationWeatherData;
   return (
     <div className="now">
       <div className="top">
-        <h1>{cloudiness}</h1>
+        <h1>{symbolPhrase}</h1>
       </div>
       <div className="middle">
         <h1>{temperature}</h1>
@@ -30,7 +30,7 @@ const Now = (locationWeatherData) => {
 
 Now.propTypes = {
   locationWeatherData: PropTypes.shape({
-    cloudiness: PropTypes.string,
+    symbolPhrase: PropTypes.string,
     temperature: PropTypes.number,
     feelsLikeTemp: PropTypes.number,
   }).isRequired,

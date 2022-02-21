@@ -2,5 +2,23 @@
   display: flex;
   flex-flow: row wrap;
   padding: 20px;
-  gap: 10px;
+  gap: 20px;
+  .now {
+    flex-basis: 100%;
+  }
+
+  @media (min-width: 576px) {
+  }
+  @media (min-width: 768px) {
+    .now {
+      flex-basis: 50%;
+    }
+  }
+  @media (min-width: 992px) {
+    .now {
+      flex-basis: 20%;
+    }
+  }
+  @media (min-width: 1200px) {
+  }
 }

@@ -12,10 +12,10 @@ const DailyCard = (dailyCardData) => {
         <h1>{date}</h1>
       </div>
       <div className="daily-card-bottom">
-        <h1>Min</h1>
-        <h1>{data.minTemp}</h1>
-        <h1>max</h1>
-        <h1>{data.maxTemp}</h1>
+        <h1 className="light">Min:</h1>
+        <h1 className="bolded">{data.minTemp}</h1>
+        <h1 className="light">Max:</h1>
+        <h1 className="bolded">{data.maxTemp}</h1>
       </div>
     </div>
   );

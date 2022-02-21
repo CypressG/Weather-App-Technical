@@ -23,6 +23,9 @@ $mustard: rgba(255, 167, 63, 1);
   .daily-card-top {
     text-align: center;
     flex-basis: 20%;
+    h1 {
+      font-size: 3rem;
+    }
   }
   .daily-card-bottom {
     display: grid;
@@ -30,5 +33,11 @@ $mustard: rgba(255, 167, 63, 1);
     grid-template-rows: 1fr 1fr;
     gap: 40px;
     padding: 40px;
+  }
+  .bolded {
+    font-weight: 600;
+  }
+  .light {
+    font-weight: 300;
   }
 }

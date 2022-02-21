@@ -1,6 +1,17 @@
 .conditions-list {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   gap: 20px;
-  flex-basis: 75%;
+  flex-basis: 100%;
+  @media (min-width: 576px) {
+  }
+  @media (min-width: 768px) {
+    flex-basis: 75%;
+
+    flex-flow: row wrap;
+  }
+  @media (min-width: 992px) {
+  }
+  @media (min-width: 1200px) {
+  }
 }

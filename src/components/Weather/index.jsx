@@ -77,21 +77,21 @@ const Weather = () => {
       <div id="header-container">
         <Logo />
       </div>
-      <div className="top-headline">
+      <div className="top-headline main-container">
         <Headline
           text={`${locationGeoData.name}, ${locationGeoData.country}`}
         />
-      </div>
 
-      <div className="main-container">
-        <Link to="/">
-          <IoArrowBackCircleSharp size="4rem" color="#ffa73f" />
-        </Link>
-        <Headline text="Currently" />
-        <Current locationWeatherData={locationWeatherData} />
-        <Headline text="Daily" />
+        <div className="main-container">
+          <Link to="/">
+            <IoArrowBackCircleSharp size="4rem" color="#ffa73f" />
+          </Link>
+          <Headline text="Currently" />
+          <Current locationWeatherData={locationWeatherData} />
+          <Headline text="Daily" />
 
-        <Daily dailyWeatherData={dailyWeatherData} />
+          <Daily dailyWeatherData={dailyWeatherData} />
+        </div>
       </div>
     </div>
   );
