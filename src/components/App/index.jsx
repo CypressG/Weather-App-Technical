@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "../Header/index";
-import Weather from "../Weather/index";
+import Results from "../Results/index";
 import "./style.scss";
 
 const App = () => (
-  <div id="container">
-    <Header />
+  <div className="container">
+    <Results />
   </div>
 );
 export default App;

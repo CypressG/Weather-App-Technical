@@ -22,7 +22,7 @@ Headline.propTypes = {
 };
 Headline.defaultProps = {
   text: "Results",
-  size: "4rem",
+  size: "3rem",
   align: "center",
 };
 export default Headline;

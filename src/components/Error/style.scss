@@ -1,0 +1,16 @@
+$background: rgba(136, 130, 124, 1);
+
+#default-searchbar-style {
+  position: relative;
+}
+.error-message {
+  position: absolute;
+  width: 55%;
+  padding: 10px;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 30%);
+  border: 4px solid rgba(66, 2, 2, 0.8);
+  background-color: rgb(255, 255, 255);
+  color: rgba(255, 15, 15, 0.671);
+}

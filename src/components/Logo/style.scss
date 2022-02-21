@@ -12,16 +12,21 @@ $logo-gradient: $first, $second;
 }
 
 #default-logo-style {
-  flex-basis: 100%;
   text-align: center;
+  text-decoration: none;
+  display: inherit;
+  flex-basis: 10%;
   h1 {
     @include gradient(left, $logo-gradient);
+    font-size: 2.5rem;
   }
-  @media (min-width: 600px) {
-    display: inherit;
-    flex-basis: 10%;
-    h1 {
-      font-size: 2.5rem;
-    }
-  }
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
 }

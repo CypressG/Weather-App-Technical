@@ -1,12 +1,23 @@
 /* eslint-disable react/forbid-prop-types */
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import DailyCard from "./DailyCard";
+import "./style.scss";
 
 const Daily = ({ dailyWeatherData: data }) => (
-  <div>
+  <div className="daily-card-container">
     {Object.prototype.hasOwnProperty.call(data, "forecast") &&
-      data.forecast.map((item) => <h1 key={item.date}>{item.date}</h1>)}
+      data.forecast.map((item) => (
+        <DailyCard key={item.date} dailyCardData={item} />
+      ))}
   </div>
 );
+Daily.propTypes = {
+  dailyWeatherData: { data: PropTypes.Object },
+};
+Daily.defaultProps = {
+  dailyWeatherData: {
+    data: {},
+  },
+};
 
 export default Daily;

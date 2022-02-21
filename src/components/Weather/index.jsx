@@ -1,12 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 import Current from "./Current";
 import Headline from "../Headline";
 
 import "./style.scss";
 import Daily from "./Daily";
+import Logo from "../Logo";
 
 const Weather = () => {
   // Get the data of url tag
@@ -19,11 +22,8 @@ const Weather = () => {
   const getLocationGeoData = () => {
     const options = {
       method: "GET",
-      url: `https://foreca-weather.p.rapidapi.com/location/${locationId}`,
-      headers: {
-        "x-rapidapi-host": "foreca-weather.p.rapidapi.com",
-        "x-rapidapi-key": "489000409fmshedfc99ee4b1f2c0p16696ejsn0edd126fc028",
-      },
+      url: `http://164.90.181.237:3500/location/geography/${locationId}`,
+      headers: {},
     };
 
     axios
@@ -38,18 +38,7 @@ const Weather = () => {
   const getLocationWeatherData = () => {
     const options = {
       method: "GET",
-      url: `https://foreca-weather.p.rapidapi.com/current/${locationId}`,
-      params: {
-        alt: "0",
-        tempunit: "C",
-        windunit: "MS",
-        tz: "Europe/London",
-        lang: "en",
-      },
-      headers: {
-        "x-rapidapi-host": "foreca-weather.p.rapidapi.com",
-        "x-rapidapi-key": "489000409fmshedfc99ee4b1f2c0p16696ejsn0edd126fc028",
-      },
+      url: `http://164.90.181.237:3500/weather/current/${locationId}`,
     };
 
     axios
@@ -64,18 +53,7 @@ const Weather = () => {
   const getDailyWeatherData = () => {
     const options = {
       method: "GET",
-      url: `https://foreca-weather.p.rapidapi.com/forecast/daily/${locationId}`,
-      params: {
-        alt: "0",
-        tempunit: "C",
-        windunit: "MS",
-        periods: "7",
-        dataset: "standard",
-      },
-      headers: {
-        "x-rapidapi-host": "foreca-weather.p.rapidapi.com",
-        "x-rapidapi-key": "489000409fmshedfc99ee4b1f2c0p16696ejsn0edd126fc028",
-      },
+      url: `http://164.90.181.237:3500/weather/daily/${locationId}`,
     };
 
     axios
@@ -95,12 +73,26 @@ const Weather = () => {
   }, []);
 
   return (
-    <div>
-      <Headline text={`${locationGeoData.name}, ${locationGeoData.country}`} />
-      <Current locationWeatherData={locationWeatherData} />
-      <Headline text="Daily" />
+    <div className="container">
+      <div id="header-container">
+        <Logo />
+      </div>
+      <div className="top-headline">
+        <Headline
+          text={`${locationGeoData.name}, ${locationGeoData.country}`}
+        />
+      </div>
 
-      <Daily dailyWeatherData={dailyWeatherData} />
+      <div className="main-container">
+        <Link to="/">
+          <IoArrowBackCircleSharp size="4rem" color="#ffa73f" />
+        </Link>
+        <Headline text="Currently" />
+        <Current locationWeatherData={locationWeatherData} />
+        <Headline text="Daily" />
+
+        <Daily dailyWeatherData={dailyWeatherData} />
+      </div>
     </div>
   );
 };

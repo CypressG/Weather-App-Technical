@@ -1,17 +1,15 @@
-.daily-card-container {
+#header-container {
   display: flex;
-  flex-flow: column wrap;
-  gap: 30px;
-  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
 
   @media (min-width: 576px) {
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
   }
   @media (min-width: 768px) {
   }
   @media (min-width: 992px) {
   }
   @media (min-width: 1200px) {
-    justify-content: flex-start;
   }
 }

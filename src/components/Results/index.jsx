@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useState } from "react";
+
 import SearchBar from "../SearchBar/index";
 import Logo from "../Logo/index";
 import useLocalStorage from "../../hooks/useLocalStorage";
@@ -6,33 +8,29 @@ import stringLengthValidator from "../../validators/stringLengthValidator";
 import "./style.scss";
 import LocationItem from "../Location/LocationItem";
 import Headline from "../Headline";
-import { useState } from "react";
+import Error from "../Error";
 
 const MIN_LENGHT = 3;
 const MAX_LENGHT = 30;
 
-const Header = () => {
+const Results = () => {
   const [query, setQuery] = useLocalStorage("query", "");
   const [data, setData] = useLocalStorage("data", []);
   const [validity, setValidity] = useState(true);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (stringLengthValidator(query, MIN_LENGHT, MAX_LENGHT)) {
       // FETCH
       setValidity(true);
+
       const options = {
         method: "GET",
-        url: `https://foreca-weather.p.rapidapi.com/location/search/${query}`,
+        url: `http://164.90.181.237:3500/location/search/${query}`,
         params: { lang: "en" },
-        headers: {
-          "x-rapidapi-host": "foreca-weather.p.rapidapi.com",
-          "x-rapidapi-key":
-            "489000409fmshedfc99ee4b1f2c0p16696ejsn0edd126fc028",
-        },
+        headers: {},
       };
-
-      // fill data
       axios
         .request(options)
         .then((response) => {
@@ -58,19 +56,20 @@ const Header = () => {
             query={query}
           />
           {!validity && (
-            <h1>There should be at least 3 letters and no more than 30</h1>
+            <Error message="Query should be between 3 and 30 characters." />
           )}
         </div>
       </div>
-      <div>
-        <div className="grid-container">
-          <Headline />
+      <div className="main-container">
+        <Headline text="Results" />
+        <div className="grid-container main-container">
           {data.length &&
             data.map((location) => <LocationItem location={location} />)}
+          {!data.length && <h1>No results</h1>}
         </div>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default Results;

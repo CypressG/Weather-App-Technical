@@ -1,15 +1,61 @@
 $first: rgba(203, 113, 6, 0.9);
 $second: rgba(255, 255, 255, 0.4);
-$mustard: rgba(255, 167, 63, 1);
+$mustard: rgb(255, 168, 61);
 $logo-gradient: $first, $second;
-
+$button-hover: hsl(35, 45%, 50%);
 @mixin gradient($direction, $list) {
   background: -webkit-linear-gradient($direction, $list);
   background: -moz-linear-gradient($direction, $list);
   background: -o-linear-gradient($direction, $list);
   background: linear-gradient($direction, $list);
 }
+.grid-container {
+  // Small devices (landscape phones, 576px and up)
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  min-width: 300px;
+  @media (min-width: 576px) {
+  }
 
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+  }
+
+  .grid-item {
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 2s;
+  }
+
+  $animationDelay: 1;
+  @for $i from 1 through 15 {
+    .grid-container div:nth-of-type(#{$i}) {
+      animation-delay: #{0.3+ ($i)/30}s;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
 .grid-item {
   @include gradient(left, $logo-gradient);
   height: 330px;
@@ -40,6 +86,24 @@ $logo-gradient: $first, $second;
     border: none;
     background-color: $mustard;
     color: white;
-    font-size: 1.2rem;
+    text-decoration: none;
+
+    h1 {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+  .bottom-button:hover {
+    background-color: $mustard;
+    opacity: 0.95;
+    width: 83%;
+  }
+  @media (min-width: 576px) {
+  }
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 992px) {
+  }
+  @media (min-width: 1200px) {
   }
 }
