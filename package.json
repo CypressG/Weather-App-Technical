@@ -2,7 +2,10 @@
   "name": "ibm-weather-app",
   "version": "0.0.1",
   "description": "An React and NodeJS Weather app.",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": [
+    "defaults",
+    "not ios_saf < 13"
+  ],
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
