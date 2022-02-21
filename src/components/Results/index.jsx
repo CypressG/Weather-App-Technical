@@ -27,7 +27,7 @@ const Results = () => {
 
       const options = {
         method: "GET",
-        url: `http://${process.env.SERVER_ADDRESS}/location/search/${query}`,
+        url: `https://${process.env.SERVER_ADDRESS}/location/search/${query}`,
         params: { lang: "en" },
         headers: {},
       };
