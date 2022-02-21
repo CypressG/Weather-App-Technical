@@ -6,7 +6,7 @@ import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 import Current from "./Current";
 import Headline from "../Headline";
-
+import "dotenv/config";
 import "./style.scss";
 import Daily from "./Daily";
 import Logo from "../Logo";
@@ -22,7 +22,7 @@ const Weather = () => {
   const getLocationGeoData = () => {
     const options = {
       method: "GET",
-      url: `http://164.90.181.237:3500/location/geography/${locationId}`,
+      url: `http://${process.env.SERVER_ADDRESS}:${process.env.PORT}/location/geography/${locationId}`,
       headers: {},
     };
 
@@ -38,7 +38,7 @@ const Weather = () => {
   const getLocationWeatherData = () => {
     const options = {
       method: "GET",
-      url: `http://164.90.181.237:3500/weather/current/${locationId}`,
+      url: `http://${process.env.SERVER_ADDRESS}:${process.env.PORT}/${locationId}`,
     };
 
     axios
@@ -53,7 +53,7 @@ const Weather = () => {
   const getDailyWeatherData = () => {
     const options = {
       method: "GET",
-      url: `http://164.90.181.237:3500/weather/daily/${locationId}`,
+      url: `http://${process.env.SERVER_ADDRESS}:${process.env.PORT}/${locationId}`,
     };
 
     axios
