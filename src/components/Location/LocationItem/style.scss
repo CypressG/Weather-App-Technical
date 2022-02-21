@@ -43,7 +43,7 @@ $button-hover: hsl(35, 45%, 50%);
   $animationDelay: 1;
   @for $i from 1 through 15 {
     .grid-container div:nth-of-type(#{$i}) {
-      animation-delay: #{0.3+ ($i)/30}s;
+      animation-delay: #{0.3 + calc(($i) / 30)}s;
     }
   }
 
